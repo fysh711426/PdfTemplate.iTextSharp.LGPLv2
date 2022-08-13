@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net5.0;net48;net47;net46;net45;net40;netstandard2.1;netstandard2.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <Authors>fysh711426</Authors>
+    <PackageId>PdfTemplate.iTextSharp.LGPLv2</PackageId>
+    <Description>This is a pdf field template library that focuses on filling in form fields like text, radio button, checkbox, image, barcode and watermark.
+This library was developed to solve the problem that customers often need to change pdf templates. Use this library to quickly change pdf templates without changing the code every time.
+    </Description>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/fysh711426/PdfTemplate.iTextSharp.LGPLv2</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html</PackageLicenseUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.8.0" />
+  </ItemGroup>
+
+</Project>
