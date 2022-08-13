@@ -4,7 +4,7 @@ using iTextSharp.text.pdf;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace PdfTemplate.iTextSharp.LGPLv2.Fields
+namespace PdfTemplate.iTextSharp.LGPLv2.Items
 {
     public class TextItem : TemplateItem
     {

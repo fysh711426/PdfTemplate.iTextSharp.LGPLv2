@@ -2,7 +2,7 @@
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 
-namespace PdfTemplate.iTextSharp.LGPLv2.Fields
+namespace PdfTemplate.iTextSharp.LGPLv2.Items
 {
     public class WaterMarkField : TemplateItem
     {
@@ -11,7 +11,13 @@ namespace PdfTemplate.iTextSharp.LGPLv2.Fields
         public BaseFont BaseFont { get; set; }
         public float FontSize { get; set; }
         public float Opacity { get; set; }
+        /// <summary>
+        /// Position offset x from center.
+        /// </summary>
         public float PositionX { get; set; }
+        /// <summary>
+        /// Position offset y from center.
+        /// </summary>
         public float PositionY { get; set; }
         public int Rotation { get; set; }
         public WaterMarkField(string key, string text, string fontPath, float fontSize,

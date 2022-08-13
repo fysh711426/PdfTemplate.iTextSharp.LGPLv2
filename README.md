@@ -1,4 +1,4 @@
-# iTextSharpLGPLv2.Templater  
+# PdfTemplate.iTextSharp.LGPLv2  
 
 This is a pdf field template library that focuses on filling in form fields like text, radio button, checkbox, image, barcode and watermark.  
 
@@ -10,17 +10,18 @@ This library was developed to solve the problem that customers often need to cha
 
 [GNU LIBRARY GENERAL PUBLIC LICENSE (LGPL V2.0)](https://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html)  
 
-This library uses [iTextSharp.LGPLv2](https://github.com/VahidN/iTextSharp.LGPLv2.Core) internally to generate pdf files, so its license is more permissive than iTextSharp 5 and iText 7.  
+This library uses iTextSharp.LGPLv2 internally to generate pdf files, so its license is more permissive than iTextSharp and iText 7.  
 
-* iTextSharp.LGPLv2 -> (LGPL v2.0)  
-* iTextSharp 5 or iText 7 -> (AGPL)  
+* [iTextSharp.LGPLv2](https://github.com/VahidN/iTextSharp.LGPLv2.Core) -> (LGPL v2.0)  
+* [iTextSharp](https://github.com/itext/itextsharp)-> (AGPL)  
+* [iText 7](https://github.com/itext/itext7-dotnet) -> (AGPL)  
 
 ---  
 
 ### Nuget install  
 
 ```
-PM> Install-Package iTextSharpLGPLv2.Templater
+PM> Install-Package PdfTemplate.iTextSharp.LGPLv2
 ```  
 
 ---  
@@ -197,7 +198,7 @@ using (var fs = new FileStream(output,
                 $"output{i}.pdf", CompressionLevel.Fastest);
             using (var zipStream = zipEntry.Open())
             {
-                templater().ToPdf(zipStream);
+                templater.ToPdf(zipStream);
             }
         }
     }
@@ -210,3 +211,17 @@ using (var fs = new FileStream(output,
 
 ### Use on web  
 
+Change FileStream to `Response.Body`.  
+
+```C#
+[HttpGet("pdf")]
+public IActionResult Pdf()
+{
+    Response.ContentType = "application/pdf";
+    var disposition = new ContentDispositionHeaderValue("attachment");
+    disposition.FileName= "output.pdf";
+    Response.Headers.ContentDisposition = disposition.ToString();
+    templater.ToPdf(Response.Body);
+    return new EmptyResult();
+}
+```

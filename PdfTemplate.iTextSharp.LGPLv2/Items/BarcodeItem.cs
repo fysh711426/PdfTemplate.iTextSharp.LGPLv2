@@ -3,12 +3,15 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 
-namespace PdfTemplate.iTextSharp.LGPLv2.Fields
+namespace PdfTemplate.iTextSharp.LGPLv2.Items
 {
     public class BarcodeItem : TemplateItem
     {
         public string Key { get; set; } = "";
         public string Code { get; set; } = "";
+        /// <summary>
+        /// Show the start and stop character '*' in the text.
+        /// </summary>
         public bool StartStopText { get; set; }
         public bool IsShowText { get; set; }
         public BarcodeItem(string key, string code, 

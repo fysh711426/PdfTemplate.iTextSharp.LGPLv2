@@ -2,7 +2,7 @@
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 
-namespace PdfTemplate.iTextSharp.LGPLv2.Fields
+namespace PdfTemplate.iTextSharp.LGPLv2.Items
 {
     public class RadioButtonItem : TemplateItem
     {
