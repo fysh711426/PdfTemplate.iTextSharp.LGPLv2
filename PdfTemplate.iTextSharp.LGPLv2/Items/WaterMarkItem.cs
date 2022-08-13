@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PdfTemplate.iTextSharp.LGPLv2.Items
 {
-    public class WaterMarkField : TemplateItem
+    public class WaterMarkItem : TemplateItem
     {
         public string Key { get; set; } = "";
         public string Text { get; set; } = "";
@@ -20,14 +20,14 @@ namespace PdfTemplate.iTextSharp.LGPLv2.Items
         /// </summary>
         public float PositionY { get; set; }
         public int Rotation { get; set; }
-        public WaterMarkField(string key, string text, string fontPath, float fontSize,
+        public WaterMarkItem(string key, string text, string fontPath, float fontSize,
             float opacity, float positionX, float positionY, int rotation)
             : this(key, text, BaseFont.CreateFont(fontPath,
                 BaseFont.IDENTITY_H, BaseFont.EMBEDDED), 
                     fontSize, opacity, positionX, positionY, rotation)
         {
         }
-        public WaterMarkField(string key, string text, BaseFont baseFont, float fontSize, 
+        public WaterMarkItem(string key, string text, BaseFont baseFont, float fontSize, 
             float opacity, float positionX, float positionY, int rotation)
         {
             Key = key;

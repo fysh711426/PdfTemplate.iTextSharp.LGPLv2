@@ -94,7 +94,7 @@ Items = new List<TemplateItem>
     // barcode
     new BarcodeItem("Barcode", "123456789"),
     // watermark
-    new WaterMarkField("Text", "WaterMark",
+    new WaterMarkItem("Text", "WaterMark",
         fontPaths[0], 130f, 0.3f, 30f, -40f, 45),
     // paragraph
     new ParagraphItem("Paragraph", (baseFonts) =>
@@ -117,15 +117,13 @@ Items = new List<TemplateItem>
 }
 ```
 
-
-
 Call `ToPdf()` method to output the template to stream.  
 
 ```C#
 using (var fs = new FileStream(output,
     FileMode.Create, FileAccess.ReadWrite))
 {
-        templater.ToPdf(fs);
+    templater.ToPdf(fs);
 }
 ```
 
@@ -134,6 +132,8 @@ using (var fs = new FileStream(output,
 ### Demo  
 
 ![Demo/1660311382853.jpg](Demo/1660311382853.jpg)  
+
+[demo.pdf](Demo/output.pdf)  
 
 ---  
 
@@ -176,7 +176,7 @@ new TextItem(key, value)
 `WaterMarkItem` can use any field as positioning.  
 
 ```C#
-new WaterMarkField("Text", ...)
+new WaterMarkItem("Text", ...)
 ```
 
 ---  

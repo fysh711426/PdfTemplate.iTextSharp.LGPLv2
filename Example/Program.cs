@@ -64,7 +64,7 @@ namespace Example
                             new CheckBoxItem("CheckBox3", "Yes"),
                             new ImageItem("Image", imagePath),
                             new BarcodeItem("Barcode", "123456789"),
-                            new WaterMarkField("Text", "WaterMark",
+                            new WaterMarkItem("Text", "WaterMark",
                                 fontPaths[0], 130f, 0.3f, 30f, -40f, 45)
                         }
                     },
@@ -98,7 +98,7 @@ namespace Example
                             new CheckBoxItem("CheckBox3", "Yes"),
                             new ImageItem("Image", imagePath),
                             new BarcodeItem("Barcode", "123456789"),
-                            new WaterMarkField("Text", "草稿",
+                            new WaterMarkItem("Text", "草稿",
                                 fontPaths[1], 250f, 0.2f, 60f, -60f, 45)
                         }
                     }
